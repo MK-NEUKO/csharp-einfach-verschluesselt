@@ -23,13 +23,15 @@ namespace csharp_einfach_verschluesselt
 
         private static string GetUserInput()
         {
-            Console.WriteLine("Text vom User holen!");
-            return "userInput";
+            Console.WriteLine("Wilkommen im Programm ROT13.");
+            Console.WriteLine("Das Programm verschlüsselt die folgende Eingabe.");
+            return Console.ReadLine();
         }
 
         private static string NormalizeUserInput(string userInput)
         {
             Console.WriteLine("Text normalisieren!");
+            Console.WriteLine(userInput);
             return "Normalisierter Text";
         }
 
