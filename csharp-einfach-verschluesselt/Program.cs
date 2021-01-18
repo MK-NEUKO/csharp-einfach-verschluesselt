@@ -30,15 +30,19 @@ namespace csharp_einfach_verschluesselt
 
         private static string NormalizeUserInput(string userInput)
         {
-            Console.WriteLine("Text normalisieren!");
-            Console.WriteLine(userInput);
-            return "Normalisierter Text";
+            userInput = userInput.ToUpper();
+            userInput = userInput.Replace("Ä", "AE");
+            userInput = userInput.Replace("Ö", "OE");
+            userInput = userInput.Replace("Ü", "UE");
+            userInput = userInput.Replace("ß", "SS");
+
+            return userInput;
         }
 
         private static string Rotate13(string userInputNormalized)
         {
             Console.WriteLine("Text verschlüsseln!");
-            return "verschlüsselter Text";
+            return userInputNormalized;
         }             
     }
 }
