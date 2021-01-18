@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace csharp_einfach_verschluesselt
 {
@@ -45,7 +46,7 @@ namespace csharp_einfach_verschluesselt
 
             foreach (var currentChar in userInputNormalized)
             {              
-                if (CheckForLettersOnly(userInputNormalized))
+                if (CheckForLettersOnly(currentChar))
                 {
                     outputString += RotateChar(currentChar);
                 }
@@ -55,9 +56,10 @@ namespace csharp_einfach_verschluesselt
             return outputString;
         }
 
-        private static bool CheckForLettersOnly(string userInputNormalized)
+        private static bool CheckForLettersOnly(char currentChar)
         {
-            return true;
+            Regex onlyLetters = new Regex("[a-zA-Z]");
+            return onlyLetters.IsMatch(currentChar.ToString());
         }
 
         private static char RotateChar(char currentChar)
