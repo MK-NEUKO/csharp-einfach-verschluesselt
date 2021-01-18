@@ -41,8 +41,29 @@ namespace csharp_einfach_verschluesselt
 
         private static string Rotate13(string userInputNormalized)
         {
-            Console.WriteLine("Text verschlüsseln!");
-            return userInputNormalized;
-        }             
+            string outputString = "";
+
+            foreach (var currentChar in userInputNormalized)
+            {              
+                if (CheckForLettersOnly(userInputNormalized))
+                {
+                    outputString += RotateChar(currentChar);
+                }
+                else
+                    outputString += currentChar;
+            }
+            return outputString;
+        }
+
+        private static bool CheckForLettersOnly(string userInputNormalized)
+        {
+            return true;
+        }
+
+        private static char RotateChar(char currentChar)
+        {
+            Console.WriteLine("Rotate");
+            return currentChar;
+        }        
     }
 }
